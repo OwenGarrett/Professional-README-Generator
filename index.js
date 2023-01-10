@@ -2,6 +2,7 @@
 const inquirer = require('inquirer')
 const fs = require("fs")
 
+const generateMarkDown = require('./utils/generatemarkDown')
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -25,12 +26,38 @@ const questions = [
     message: "How is this app intended to be used?",
     name: "Usage",
   },
+  {
+    type: "list",
+    message: "Which license was used to create this app?",
+    choices: ["MIT", "GNU", "Apache", "None"],
+    name: "License",
+  },
+  {
+    type: "input",
+    message: "Who contributed to the development of this app?",
+    name: "Contributing",
+  },
+  {
+    type: "input",
+    message: "What comands should be used to test this app?",
+    name: "Tests",
+  },
+  {
+    type: "input",
+    message: "What is your GitHub username?",
+    name: "GitHub",
+  },
+  {
+    type: "input",
+    message: "What is your email address?",
+    name: "Email",
+  },
   // finish writing questions for prompt
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    return fs.writeFile(fileName, generateMarkdown.js)
+    return fs.writeFile(fileName, generateMarkDown.js)
 }
 
 // TODO: Create a function to initialize app
